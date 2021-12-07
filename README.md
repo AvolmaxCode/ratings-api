@@ -1,1 +1,1 @@
-# Ratings
+# Ratings API
