@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { TopLevelCategory, TopPageModel } from './top-page.model';
@@ -31,7 +32,7 @@ export class TopPageService {
 			.group({
 				_id: { secondCategory: '$secondCategory' },
 				pages: {
-					$push: { alias: '$alias', title: '$title' },
+					$push: { alias: '$alias', title: '$title', _id: '$_id', category: '$category' },
 				},
 			})
 			.exec();
