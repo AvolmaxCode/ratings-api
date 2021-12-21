@@ -47,6 +47,6 @@ export class TopPageService {
 	}
 
 	async updateById(id: string, dto: CreateTopPageDto) {
-		return this.topPageModel.findByIdAndUpdate(id, dto, { new: true }).exec();
+		return this.topPageModel.findByIdAndUpdate(id, { $set: dto }, { new: true }).exec();
 	}
 }
